@@ -1,0 +1,47 @@
+﻿@page "{id:Guid}"
+@model Razor_CRUD.Pages.Employees.EditModel
+@{
+    var message = ViewData["Message"]?.ToString();
+}
+<h1 class="mb-3">Edit Employee</h1>
+@if(!string.IsNullOrWhiteSpace(message))
+{
+    <div class="alert alert-success" role="alert">
+        @message
+    </div>
+}
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label">Id</label>
+        <input type="text" class="form-control" asp-for="editEmployee.Id" readonly />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" asp-for="editEmployee.Name" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="editEmployee.Email" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Salary</label>
+        <input type="number" class="form-control" asp-for="editEmployee.Salary" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">DateOfBirth</label>
+        <input type="date" class="form-control" asp-for="editEmployee.DateOfBirth" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Department</label>
+        <input type="text" class="form-control" asp-for="editEmployee.Department" />
+    </div>
+    <div class="mb-3 d-flex justify-content-between">
+        <button class="btn btn-primary" asp-page-handler="Update">
+            Update
+        </button>
+
+        <button class="btn btn-danger" asp-page-handler="Delete">
+            Delete
+        </button>
+    </div>
+</form>

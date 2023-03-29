@@ -1,0 +1,42 @@
+﻿@page
+@model Razor_CRUD.Pages.Employees.ListModel
+@{
+}
+
+<h1 class="mb-3">List of Employees</h1>
+@if(Model.employees != null && Model.employees.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>DateOfBirth</th>
+                <th>Department</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var i in Model.employees)
+            {
+                <tr>
+                    <td>@i.Id</td>
+                    <td>@i.Name</td>
+                    <td>@i.Email</td>
+                    <td>@i.Salary</td>
+                    <td>@i.DateOfBirth</td>
+                    <td>@i.Department</td>
+                    <td>
+                        <a href="/Employees/Edit/@i.Id" class="btn btn-dark">Edit</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No Employees found!</p>
+}

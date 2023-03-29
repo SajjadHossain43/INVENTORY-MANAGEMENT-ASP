@@ -1,0 +1,33 @@
+﻿@page
+@model Razor_CRUD.Pages.RegisterModel
+@{
+}
+<div class="container mt-3">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-sm-12 col-md-12 col-lg-4">
+            <h1 class="mb-3">Register</h1>
+            <form method="post">
+                <div asp-validation-summary="All" class="text-danger">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="register.Email">Email</label>
+                    <input type="text" asp-for="register.Email" class="form-control"/>
+                    <span asp-validation-for="register.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="register.Password">Password</label>
+                    <input type="text" asp-for="register.Password" class="form-control"/>
+                    <span class="text-danger" asp-validation-for="register.Password"></span>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" asp-for="register.ConfirmPassword">Confirm Password</label>
+                    <input type="text" asp-for="register.ConfirmPassword" class="form-control" />
+                    <span class="text-danger" asp-validation-for="register.ConfirmPassword"></span>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
